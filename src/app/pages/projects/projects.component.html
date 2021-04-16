@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="warn"><p>{{this.projectsTexts.warn}}</p></div>
+  <div class="centrado">
+
+
+    <article class="article"  *ngFor="let item of projects; index as i" (click)="maintain(i)" >
+      
+      <div class="article__img show {{ item.class }}" >
+        <img loading="lazy" [src]="item.url" alt="Image" />
+      </div>
+      <div class="article__texts {{ item.class }}">
+        <h2 class="article__title">{{ item.title }}</h2>
+        <div class="article__info">
+          <p class="article__year">{{ item.year }}</p>
+          <p class="article__description">{{ item.description }}</p>
+        </div>
+      </div>
+
+    </article>
+  </div>
+
+
+
+ 
+</div>
+
+<div class="arrows scrollSign">
+  <!-- <i  class="fas fas fa-chevron-up arrow1" (click)='wheelUp()' ></i>
+  <i class="fas fa-circle arrow2" (click)='wheelDown()'></i>
+  <i class="fas fas fa-chevron-down arrow3" (click)='wheelDown()'></i> -->
+</div>

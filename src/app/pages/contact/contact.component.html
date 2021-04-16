@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="centrado">
+    <div class="container">
+      <div class="h2" *ngIf="eng">
+        <div class="letter__h2">C</div>
+        <div class="letter__h2">o</div>
+        <div class="letter__h2">n</div>
+        <div class="letter__h2">t</div>
+        <div class="letter__h2">a</div>
+        <div class="letter__h2">c</div>
+        <div class="letter__h2">t</div>
+      </div>
+
+      <div class="h2" *ngIf="spa">
+        <div class="letter__h2">C</div>
+        <div class="letter__h2">o</div>
+        <div class="letter__h2">n</div>
+        <div class="letter__h2">t</div>
+        <div class="letter__h2">a</div>
+        <div class="letter__h2">c</div>
+        <div class="letter__h2">t</div>
+        <div class="letter__h2">o</div>
+      </div>
+
+      <div class="h1">
+        <a href="mailto:saramartin.wd@gmail.com">
+          <div class="letter__container">
+            <div class="letter__email">s</div>
+            <div class="letter__email">a</div>
+            <div class="letter__email">r</div>
+            <div class="letter__email">a</div>
+            <div class="letter__email">m</div>
+            <div class="letter__email">a</div>
+            <div class="letter__email">r</div>
+            <div class="letter__email">t</div>
+            <div class="letter__email">i</div>
+            <div class="letter__email">n</div>
+            <div class="letter__email">.</div>
+            <div class="letter__email">w</div>
+            <div class="letter__email">d</div>
+            <div class="letter__email">@</div>
+            <div class="letter__email">g</div>
+            <div class="letter__email">m</div>
+            <div class="letter__email">a</div>
+            <div class="letter__email">i</div>
+            <div class="letter__email">l</div>
+            <div class="letter__email">.</div>
+            <div class="letter__email">c</div>
+            <div class="letter__email">o</div>
+            <div class="letter__email">m</div>
+          </div>
+        </a>
+      </div>
+
+      <ul class="rrss">
+        <li class="rrss__li" *ngFor="let item of rrssData" >
+          <a href="{{ item.href }}" target="_blank" rel="noopener noreferrer">
+            <i class="{{item.icon}}"></i>
+          </a>
+        </li>
+      </ul>
+
+      <!-- <a class="button__a" [href]="'mailto:saramartin.wd@gmail.com'" target="_blank"><span class="button">
+        Send me an email!
+        </span>
+      </a> -->
+    </div>
+  </div>
+</div>
+
+<div class="arrows scrollSign" [ngClass]="{'deactivated': deactivate}">
+  <i class="fas fas fa-chevron-up arrow1" (click)="wheelUp()"></i>
+  <i class="fas fa-circle arrow2" (click)="centerButton()"></i>
+  <i class="fas fas fa-chevron-down arrow3" (click)="wheelDown()"></i>
+</div>

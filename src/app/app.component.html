@@ -1,0 +1,17 @@
+<div class="body" (mousedown)="activeMouse()" (mouseup)="inactiveMouse()">
+  <div
+    class="mouse"
+    [ngStyle]="{ top: mouseTop + 'px', left: mouseLeft + 'px' }"
+  >
+    <div id="raton" class="raton"></div>
+  </div>
+
+  <app-nav></app-nav>
+
+  <div class="router-outlet">
+    <router-outlet></router-outlet>
+  </div>
+
+
+
+</div>

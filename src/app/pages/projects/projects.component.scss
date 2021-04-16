@@ -1,0 +1,120 @@
+@import "mixins", "variables", "keyframes";
+
+.container {
+  width: 100%;
+  @include flex(column, nowrap, flex-start, center);
+  position:relative;
+}
+.warn{
+  
+display: none;
+  @media screen and (max-width: 480px){
+    display: inline;
+    width: 80%;
+    text-align: center;
+    // background-color: red;
+    margin-top:50px;
+    color:$grey;
+    font-size: 1.1em;
+    position:absolute;
+    font-family: $serif;
+  }
+}
+
+.centrado {
+  margin: 125px 0;
+  width: 80%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+
+  @media screen and (max-width: 1000px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.article {
+  
+  @include flex(row, nowrap, center, center);
+  animation: appear 0.8s linear 1;
+  position: relative;
+
+
+    @media screen and (min-width: 1000px){
+      &:hover .article__texts {
+        opacity: 1;   
+  
+      }
+    }
+
+  &__img {
+    position: relative;
+    @include flex(column, nowrap, flex-start, center);
+    transition: all 0.3s ease-out;
+    opacity: 0.1;
+
+    
+    &.show {
+      opacity: 1;
+    }
+    @media screen and (min-width: 1000px){
+    &:hover {
+      opacity: 0.1;    
+
+    }
+  }
+
+    img {
+      border-radius: 10px;
+    }
+
+    &.peque {
+      transform: scale(0.8);
+    }
+  }
+
+  &__texts {
+    opacity: 0;
+    @include flex(column, nowrap, flex-start, center);
+    transition: all 0.3s ease-out;
+    position: absolute;
+    pointer-events: none;
+    
+    &.show {
+      opacity: 1;
+    }
+  }
+  &__title {
+    font-size: 2.5em;
+    font-family: $serif;
+    margin: 0.5em auto ;
+  }
+  &__info {
+    @include flex(row, nowrap, flex-start, center);
+  }
+
+  &__year {
+    transform: rotate(270deg);
+    letter-spacing: 5px;
+
+    &__description {
+      margin-left: 1em;
+    }
+  }
+}
+
+.arrows {
+  position: fixed;
+  right: 50px;
+  top: calc(50% - 75px);
+  @include flex(column, nowrap, space-between, center);
+  font-size: 2em;
+  height: 150px;
+  color: $arrowsColor;
+  overflow: hidden;
+  transition: all .2s ease;
+  &.deactivated{
+      color:$lightgrey;
+  }
+}

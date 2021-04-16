@@ -1,0 +1,29 @@
+<nav class="nav">
+    <h1 class="nav__h1" *ngIf="eng"><a   [routerLink]="'/home'">Sara Martin-Alonso</a></h1>
+    <h1 class="nav__h1" *ngIf="spa"><a  [routerLink]="'/es/home'">Sara Martin-Alonso</a></h1>
+
+    
+    <i class='button fas fa-bars' (click)='openMenu()'></i>
+
+    <ul class="nav__ul">
+        <ul class="nav__ul--eng" *ngIf="eng">
+            <li class="nav__li"><a (click)='openMenu()' routerLinkActive="active" [routerLink]="'/home'">Home</a></li>
+            <li class="nav__li"><a (click)='openMenu()' routerLinkActive="active" [routerLink]="'/projects'">Projects</a></li>
+            <li class="nav__li"><a (click)='openMenu()' routerLinkActive="active" [routerLink]="'/about'">About</a></li>
+            <li class="nav__li"><a (click)='openMenu()' routerLinkActive="active" [routerLink]="'/contact'">Contact</a></li> 
+        </ul> 
+        <ul class="nav__ul--spa" *ngIf="spa">
+            <li class="nav__li"><a (click)='openMenu()' routerLinkActive="active" [routerLink]="'/es/home'">Inicio</a></li>
+            <li class="nav__li"><a (click)='openMenu()' routerLinkActive="active" [routerLink]="'/es/projects'">Proyectos</a></li>
+            <li class="nav__li"><a (click)='openMenu()' routerLinkActive="active" [routerLink]="'/es/about'">Sobre mí</a></li>
+            <li class="nav__li"><a (click)='openMenu()' routerLinkActive="active" [routerLink]="'/es/contact'">Contacto</a></li> 
+        </ul> 
+        <ul class="language">
+           
+            <li class="language__li spa" [ngClass]="{'active': this.spa}" (click)="changeLang('spa')">SPA</li>
+            <li class="language__li line" >/</li>
+            <li class="language__li eng active"[ngClass]="{'active': this.eng}" (click)="changeLang('eng')">ENG</li>
+        </ul>
+    </ul>
+</nav>
+

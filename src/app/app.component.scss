@@ -1,0 +1,32 @@
+@import "mixins",  "variables", "keyframes";
+
+
+  
+.mouse{
+    z-index:100;
+    position:fixed;
+    pointer-events: none;
+    border-radius: 50%;
+    @media screen and (max-width: 1000px) {
+      display:none;
+    }
+  
+}
+.raton{  
+    transition: all .3s ease;
+    width: 25px;
+    height: 25px;
+    background-color:$highlight-color;
+    border-radius: 50%;
+    z-index:2;
+    pointer-events: none;
+    @media screen and (max-width: 1000x) {
+        display:none;
+      }
+
+    &.active{
+        transform: scale(0.8)
+
+    }
+}
+

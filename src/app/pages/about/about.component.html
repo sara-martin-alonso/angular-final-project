@@ -1,0 +1,73 @@
+<div class="aboutBody" >
+  
+  
+  <div class="container">
+    <div class="centrado">
+      <div class="presentation">
+        <p class="hello">{{about.hello}}</p>
+        <div class="presentation__container">
+          <div class="presentation__left">
+           {{about.presentation__left}}
+          </div>
+          <div class="presentation__right">
+            {{about.presentation__right}}
+          </div>
+        </div>
+      </div>
+  
+      <div class="education">
+        <h2 class="education__h2">{{about.education__h2}}</h2>
+  
+        <section class="education__section">
+  
+          <div *ngFor="let item of education" class="education__row">
+            <div class="education__year"><p>{{item.year}}</p></div>
+            <div class="education__text">
+              <div class="education__title">{{item.title}}</div>
+              <div class="education__institution">{{item.institution}}</div>
+            </div>
+            
+          </div>
+        </section>
+        
+      </div>
+  
+  
+      <div class="skills">
+        <h2 class="skills__h2">{{about.skills__h2}}</h2>
+        <div class="skills__container" >
+          <div class="skills__icon svgBlack" *ngFor="let item of skills; index as i" (mouseover)=mouseIn(i) (mouseleave)=mouseOut(i) >  
+            <div class="title"><h2 class="h2">{{item.title}}</h2></div>
+            <i *ngIf="item['icon']" class="{{item['icon']}} icon" ></i>
+            
+  
+            <!-- <svg *ngIf="item['url']" xmlns="http://www.w3.org/2000/svg" viewBox="-18.458 6.58 191.151 132.49" [innerHTML]="item.url" >      
+  
+            </svg> -->
+            
+  
+          </div>
+          <div class="skills__icon button" (click)='turnAll()'>
+            <p>{{about.skills__button}}</p>
+          </div>
+        
+      
+        </div>
+  
+        <div class="skills__note">{{about.skills__note}}</div>
+      </div>
+  
+    </div>
+  </div>
+  
+  
+  <div class="warn" *ngIf="this.topScreen">  <p>{{about.warn}}</p> </div>
+  
+  <div class="arrows scrollSign" [ngClass]="{'deactivated': deactivate}">
+    <i  class="fas fas fa-chevron-up arrow1" (mousedown)="scrollUp()" (mouseup)="stopScroll()"(touchstart)="scrollUp()" (touchend)="stopScroll()" ></i>
+    <i class="fas fa-circle arrow2" (click)="centerButton()"></i>
+    <i class="fas fas fa-chevron-down arrow3" (mousedown)="scrollDown()" (mouseup)="stopScroll()"(touchstart)="scrollDown()" (touchend)="stopScroll()"></i>
+  </div>
+  
+
+</div>

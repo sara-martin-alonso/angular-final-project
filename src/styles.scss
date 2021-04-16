@@ -1,0 +1,78 @@
+@import "mixins",  "variables", "keyframes";
+
+/* RESET CSS */
+* {
+    cursor: none;
+    @media screen and (max-width: 1000px) {
+        cursor: initial;
+      }
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    
+}
+li {
+    list-style: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+p a {
+    display: inline;
+  
+}
+
+.clear::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+}
+
+/* COMUNES EN HTML */
+.centrado {
+    width: 90%;
+    margin: 0 auto;
+}
+
+body {
+    font-size: 16px;
+    font-family: $sans-serif;
+    background-color: $white;
+    
+
+}
+form,
+form * {
+    font-size: inherit;
+    font-family: inherit;
+    background: transparent;
+    outline:transparent;
+}
+

@@ -1,0 +1,117 @@
+@import "mixins", "variables", "keyframes";
+
+.container {
+  width: 100%;
+  @include flex(column, nowrap, center, center);
+  height: 100vh;
+}
+.centrado {
+  width: 80%;
+  max-width: 1000px;
+  @include flex(column, nowrap, center, center);
+}
+
+.container {
+  @include flex(column, nowrap, center, center);
+  transition: all 0.3s ease;
+}
+.h2 {
+  font-size: 4em;
+  font-family: $serif;
+  letter-spacing: 5px;
+  
+  @include flex(row, nowrap, center, center);
+  .letter__h2 {
+    @include flex(row, nowrap, center, center);
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 3.5em;
+  }
+  @media screen and (max-width: 460px) {
+    font-size: 3em;
+  }
+}
+
+.h1 {
+  font-size: 2em;
+  letter-spacing: -1px;
+  // font-style: italic;
+  margin: 0.5em auto;
+  @media screen and (max-width: 1000px) {
+    font-size: 1.5em;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 1.2em;
+  }
+  @media screen and (max-width: 460px) {
+    font-size: 1em;
+  }
+}
+
+.letter__container {
+  @include flex(row, nowrap, center, center);
+}
+.letter__email {
+  transition: all 0.3s ease;
+  margin: 0 0.1em;
+}
+
+.button {
+  @include flex(row, nowrap, center, center);
+  margin-top: 2em;
+  transition: all 0.3s ease;
+  border-radius: 33px;
+  border: 2px solid $grey;
+  background-color: light$grey;
+  padding: 16px;
+
+  &__a {
+    display: inline-block;
+    font-size: 1.2;
+    transition: all .3s ease;
+    &:hover {
+      transform: scale(1.1);
+    }
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+}
+
+.rrss{
+  @include flex(row, nowrap, center, center);
+  
+  li{
+    transition: all .3s ease;
+    margin: 0.5em;
+    font-size: 2em;
+    &:hover {
+      transform: scale(1.1) ;
+    }
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+}
+.arrows {
+  position: fixed;
+  right: 50px;
+  top: calc(50% - 75px);
+  @include flex(column, nowrap, space-between, center);
+  font-size: 2em;
+  height: 150px;
+  color: $arrowsColor;
+  overflow: hidden;
+  transition: all .2s ease;
+  &.deactivated{
+      color:$lightgrey;
+  }
+
+  @media screen and (max-width: 1000px) {
+    right: 25px;
+}
+
+
+}

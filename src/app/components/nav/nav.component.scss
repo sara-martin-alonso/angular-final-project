@@ -1,0 +1,185 @@
+@import "/src/assets/scss/mixins", "/src/assets/scss/variables",
+  "/src/assets/scss/keyframes";
+
+.nav {
+  position: fixed;
+  top: 0;
+
+  width: 100%;
+  padding: 30px;
+  @include flex(row, nowrap, space-between, center);
+  z-index: 15;
+  background-color: #efefefb6;
+  @media screen and (max-width: 480px) {
+    justify-content: flex-end;
+    bottom: 0;
+    top: initial;
+    background-color: transparent;
+  }
+  &__h1 {
+    font-family: $serif;
+    font-size: 1.5em;
+    @media screen and (max-width: 480px) {
+      display: none;
+    }
+  }
+  &__ul {
+    @include flex(row, nowrap, flex-end, center);
+    z-index: 21;
+    width: 50%;
+    @media screen and (max-width: 1000px) {
+      // display: none;
+      transform: translateX(100vw);
+      transition: all 0.3s ease;
+      width: 100%;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      position: fixed;
+      font-size: 3em;
+      background-color: $highlight-color;
+      @include flex(column, nowrap, center, center);
+      color: $white;
+
+      &.open {
+        transform: translate(0);
+      }
+    }
+  }
+  &__ul--eng,
+  &__ul--spa {
+    @include flex(row, nowrap, flex-end, center);
+    margin-right: 22px;
+    @media screen and (max-width: 1000px) {
+      @include flex(column, nowrap, flex-end, center);
+      margin-bottom: 30px;
+      margin-right: 0px;
+    }
+  }
+  &__li {
+    white-space: nowrap;
+    position: relative;
+    z-index: 21;
+    margin-left: 15%;
+    transition: all 0.3s ease;
+    font-size: 1em;
+  
+    a.active{font-weight: 900;};
+
+    @media screen and (max-width: 1000px) {
+      margin-right: 0;
+      margin-left: 0;
+      // transform: translateX(50px);
+      transform: translateY(-20px);
+      opacity: 0;
+      cursor: pointer;
+      &.open {       
+        // transform: scale(1.1);
+        transform: translateY(0px);
+        opacity: 1;        
+      }
+
+      
+      a.active {
+        margin: 3px 0;
+        padding: 8px ;
+        background-color: $white;
+        width: 100vw;
+        color:$highlight-color;
+        
+      }
+    }
+    a.active{
+      
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+    a {
+      @media screen and (max-width: 1000px) {
+        margin: 0.3em;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.button {
+  display: none;
+  z-index: 23;
+  position: relative;
+  padding: 16px;
+
+  @media screen and (max-width: 1000px) {
+    display: flex;
+    font-size: 2em;
+    &.open {
+      color: $white;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    display: flex;
+    padding: 18px;
+    border-radius: 50%;
+    color: $white;
+    background-color: $highlight-color;
+    font-size: 1.3em;
+    transition: all 0.3s ease;
+    box-shadow: 3px 2px 7px 0px #18181896;
+    &.open {
+      background-color: $white;
+      color: $highlight-color;
+    }
+  }
+}
+
+.language {
+  border-left: 2px solid black;
+  padding-left: 20px;
+
+  @include flex(row, nowrap, center, center);
+  @media screen and (max-width: 1000px) {
+    // border-top: 2px solid white;
+    padding-left: 0px;
+    padding-top: 30px;
+    border-left: 0px;
+  }
+
+  &__li {
+    &.active {
+      font-weight: 600;
+    }
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @media screen and (max-width: 1000px) {
+      cursor: pointer;
+    }
+    @media screen and (max-width: 480px) {
+      font-size:.5em;
+    }
+  }
+  .spa {
+    margin-right: 10px;
+    @media screen and (max-width: 1000px) {
+      margin: 0px;
+      @include flex(row, nowrap, center, center);
+
+      
+    }
+  }
+
+  .line{
+    display:none;
+    @media screen and (max-width: 1000px) {
+      display: flex;
+      margin: 0 15px;
+
+      
+    }
+
+  }
+}
