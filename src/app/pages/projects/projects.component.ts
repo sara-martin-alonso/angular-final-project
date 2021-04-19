@@ -50,85 +50,11 @@ export class ProjectsComponent implements OnInit {
    
   }
 
-  // mouseIn(x) {   
-
-  //   if(!this.desactivar[x]){
-  //     this.desactivar[x] = true
-  //   
-  //            
-  //       setTimeout(() => {
-  //         this._______.classList.add('_______');
-  //       }, 300);
-  //       this.desactivar[x] = false
-  //   }
-  
-     
-  //   }
-  
- 
-     
-  
-  
-  
-  //   }
-  
-
-  
-
-//   setUp(){
-//     console.log('i')
-//    for (let i = 0; i < this.article.length; i++) {
-//      const element = this.article[i];
-//      element.setAttribute('style', 'color:red')
-//    }
-//  }
-
- 
-
-
-// @HostListener('document:wheel', ['$event']) appear($event) {
-   
-  // }
 
   ngOnInit(): void {
   }
 
 
-  // foto: number = 0;
-  // sum(){
-  //   this.wheelUp()
-  // }
-  // hide(x) {
-  //   this.image[x].classList.remove('center');
-  //   this.texts[x].classList.remove('center');
-  //   this.circles[x].classList.remove('active');
-  // }
-  // show(x) {
-  //   this.image[x].classList.add('center');
-  //   this.texts[x].classList.add('center');
-  //   this.circles[x].classList.add('active');
-  // }
-
-  // wheelUp(){
-  //   if (this.foto === this.texts.length - 1) {
-  //     this.hide(this.foto);
-  //     this.foto = 0;
-  //     this.show(this.foto);
-  //   } else {
-  //     this.hide(this.foto);
-  //     this.foto++;
-  //     this.show(this.foto);
-  //   }
-  // }
-  // wheelDown(){
-  //   this.hide(this.foto);
-  //   this.foto--;
-
-  //   if (this.foto < 0) {
-  //     this.foto = this.texts.length - 1;
-  //   }
-  //   this.show(this.foto);
-  // }
 
   
 }
