@@ -1,8 +1,6 @@
 # Description
 
-Final project for the JavaScript, JQuery & Angular course on Trazos
-
-This webpage is built using Angular
+Final project built with Angular for the JavaScript, JQuery & Angular course on Trazos
 
 # Video
 
